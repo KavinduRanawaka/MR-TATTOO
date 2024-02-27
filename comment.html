@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animated Comment Web Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: pink;
+    }
+    #comment-section {
+      position: relative;
+      width: 500px;
+      margin: auto;
+      padding: 80px 0;
+      background: linear-gradient(rgba(0,0,0,0.5),#009688);
+      border-radius: 8px;
+      box-shadow: 0 0 8px #aaa;
+    }
+    #comment-section h2 {
+      font-size: 24px;
+      text-align: center;
+    }
+    #comment-section .comment {
+      position: relative;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 8px;
+      background-color: #f8f8f8;
+      
+    }
+    #comment-section .comment:nth-child(odd) {
+      background-color: #e8e8e8;
+    }
+    #comment-section .comment .username {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    #comment-section .comment .comment-text {
+      margin-left: 8px;
+    }
+    #comment-section .add-comment {
+      position: relative;
+      width: 100%;
+      padding: 8px;
+      background-color: #f8f8f8;
+    }
+    #comment-section .add-comment textarea {
+      width: 100%;
+      height: 60px;
+      border: none;
+      padding-left: 8px;
+    }
+    #comment-section .add-comment button {
+      float: right;
+      padding: 8px;
+      background-color: #f8f8f8;
+    }
+    
+  </style>
+  <script>
+    window.addEventListener("load", function() {
+      // Get comment section
+      var commentSection = document.getElementById("comment-section");
+      // Get submit button
+      var submitButton = document.querySelector("#comment-section .add-comment button");
+      // Get comment list
+      var commentList = document.getElementById("comment-list");
+      // Get comment textarea
+      var commentTextarea = document.querySelector("#comment-section .add-comment textarea");
+      
+      // Add click event listener to submit button
+      submitButton.addEventListener("click", function() {
+        // Get value of comment textarea
+        var commentText = commentTextarea.value;
+        // Create a list item
+        var listItem = document.createElement("li");
+        listItem.className = "comment";
+        // Create a div
+        var commentDiv = document.createElement("div");
+        // Create a username span
+        var usernameSpan = document.createElement("span");
+        usernameSpan.className = "username";
+        usernameSpan.innerHTML = "Anonymous";
+        // Create a comment text span
+        var commentTextSpan = document.createElement("span");
+        commentTextSpan.className = "comment-text";
+        commentTextSpan.innerHTML = commentText;
+        // Append username and comment text spans to comment div
+        commentDiv.appendChild(usernameSpan);
+        commentDiv.appendChild(commentTextSpan);
+        // Append comment div to list item
+        listItem.appendChild(commentDiv);
+        // Append list item to comment list
+        commentList.appendChild(listItem);
+        // Reset comment textarea
+        commentTextarea.value = "";
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="comment-section">
+    <h2>Comments</h2>
+    <ul id="comment-list">
+      <li class="comment">
+        <div>
+          <span class="username">Joe Robbinson</span>
+          <span class="comment-text">I've had 2 tattoos done by kavindu@mrtattoo.lk . He's 
+			 good and clean and experienced, but also an artist so you have to be 
+			 firm because he likes to add his own flair to his work! His little 
+			 brother, is also great, and also works there! So does their dad - also 
+			 an artist!!!</span>
+        </div>
+      </li>
+      <li class="comment">
+        <div>
+          <span class="username">Anna Root</span>
+          <span class="comment-text">Last month I have visited Mr tatoo shop.They have marvelous tattoo design andi impressed 
+			   those designs.mr tatoo has such a clever staff.Good luck guys!!!!</span>
+        </div>
+      </li>
+    </ul>
+    <div class="add-comment">
+      <textarea placeholder="Leave a comment..."></textarea>
+      <button>Submit</button>
+    </div>
+  </div>
+</body>
+</html>

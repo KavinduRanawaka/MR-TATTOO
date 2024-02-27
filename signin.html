@@ -1,0 +1,215 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+			background-color: #009688;
+            font-family: sans-serif;
+        }
+        .form-wrap {
+            width: 400px;
+            background:#cec027;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            left: 50%;
+            top: 52%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+        .form-wrap .tab-group {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            overflow: hidden;
+        }
+        .form-wrap .tab-group:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .form-wrap .tab-group li {
+            float: left;
+        }
+        .form-wrap .tab-group label {
+            padding: 15px 20px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            transition: all 0.3s ease 0s;
+            position: relative;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+        }
+        .form-wrap .tab-group label::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #ddd;
+            border-radius: 12px 12px 0 0;
+            transform: scaleX(0);
+            transition: all 0.3s ease 0s;
+        }
+        .form-wrap .tab-group input[type="radio"] {
+            display: none;
+        }
+        .form-wrap .tab-group input[type="radio"]:checked + label {
+            color: #555555;
+        }
+        .form-wrap .tab-group input[type="radio"]:checked + label::after {
+            transform: scaleX(1);
+        }
+        .form-wrap .tab-content > div {
+            padding: 30px 20px;
+            box-sizing: border-box;
+            animation: scale 0.7s ease;
+        }
+        .form-wrap .tab-content h3 {
+            margin-top: 0;
+        }
+        .form-wrap .tab-content .signup-tab p {
+            font-size: 14px;
+            color: #8c8c8c;
+            margin-bottom: 20px;
+        }
+        .form-wrap .tab-content .signup-tab input[type="checkbox"] {
+            float: left;
+            margin-right: 10px;
+        }
+        .form-wrap .tab-content .signup-tab label {
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .form-wrap .tab-content .login-tab p {
+            font-size: 14px;
+            color: #8c8c8c;
+            margin-bottom: 20px;
+        }
+        .form-wrap .tab-content .login-tab input[type="checkbox"] {
+            float: left;
+            margin-right: 10px;
+        }
+        .form-wrap .tab-content .login-tab label {
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .form-wrap .tab-content .login-tab .forgot-pass {
+            float: right;
+            font-size: 13px;
+            color: #777777;
+            font-weight: 400;
+        }
+        .form-wrap .tab-content .signup-tab .forgot-pass {
+            float: right;
+            font-size: 13px;
+            color: #777777;
+            font-weight: 400;
+        }
+        .form-wrap form .btn {
+            float: right;
+            padding: 13px 0;
+            width: 130px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            background: #B22222;
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+        }
+        .form-wrap form .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+            background: #000000;
+        }
+        @keyframes scale {
+            0%,
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+			
+	        a:hover {
+	          color:#81091b;
+             }
+			
+        }
+    </style>
+</head>
+<body>
+    <div class="form-wrap">
+        <h1>Enter Your Free Time/Sign In</h1>
+        <form>
+            <div class="tab-group">
+                <input type="radio" name="tab" id="signup-tab" checked>
+                <label for="signup-tab">Enter Your Free time</label>
+                <input type="radio" name="tab" id="login-tab">
+                <label for="login-tab">Log In</label>
+            </div>
+            <div class="tab-content">
+                <div id="signup">
+                    <h3>Enter Your Details Here....</h3>
+                    <p>Please enter your correct details </p>
+                    <form action="">
+                        <input type="text" placeholder="Name" autocomplete="off" required>
+                        <input type="email" placeholder="Email" autocomplete="off" required>
+                        <input type="text" placeholder="Mobile No:" autocomplete="off" required><br>
+						Gender:<input type="radio" name="gender" value="male"/>male
+	                  <input type="radio" name="gender" value="female"/>female<br>
+					  Choose A Date:  <select name="Date">
+	                      <option value="sun">Sunday</option>
+						  <option value="mon">Monday</option>
+						  <option value="tue">Tuesday</option>
+						  <option value="wed">Wednesday</option>
+						  <option value="thu">Thursday</option>
+						  <option value="fri">Friday</option>
+						  <option value="sat">Saturday</option>
+						  </select>
+						   
+						<input type="submit" value="SUBMIT" class="btn">
+                    </form>
+                </div>
+                <div id="login">
+                    <h3>Log In</h3>
+                    <p>Welcome back to Mr Tattoo Web Page.</p>
+                    <form action="">
+                       <a href="mainpage.html"><img src="https://www.bing.com/th?id=OIP.eIqJ61LfsEPjGIXswOBH7AHaDB&w=350&h=143&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" width="30%" height="30%"> </a>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        (function () {
+            var formWrap = document.querySelector('.form-wrap');
+            formWrap.addEventListener('click', function (event) {
+                var target = event.target;
+                if (target.id === 'signup-tab') {
+                    document.querySelector('#signup').style.display = 'block';
+                    document.querySelector('#login').style.display = 'none';
+                } else if (target.id === 'login-tab') {
+                    document.querySelector('#signup').style.display = 'none';
+                    document.querySelector('#login').style.display = 'block';
+                }
+            });
+        }());
+    </script>
+</body>
+</html>
